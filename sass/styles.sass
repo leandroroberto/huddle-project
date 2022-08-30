@@ -1,0 +1,119 @@
+@use 'variables'
+@use 'mixins'
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300;400;600&display=swap')
+
+body
+    background-image: url('/images/bg-mobile.svg')
+    background-color: variables.$primary-color
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+nav
+    width: 100%
+    height: 3rem
+    @include mixins.flex-center
+
+    .header
+        width: 100%
+        height: 4rem
+        margin: 1rem
+
+        &-img
+            width: 8rem
+            heigh: auto
+            margin: 1.5rem 0
+            flex-direction: flex-start
+            @include mixins.mobile768px
+                width: 10rem
+
+section
+    width: 100%
+    height: 80vh
+
+    .main
+        width: 100%
+        height: 75vh
+        @include mixins.flex-center
+        flex-direction: column
+
+        &-image
+            width: 100%
+            height: auto
+            @include mixins.flex-center
+
+            img
+                width: 17rem
+                height: auto
+                margin-top: 3.5rem
+                @include mixins.mobile768px
+                    width: 25rem
+                    margin: 2rem 0 1rem 0
+                @include mixins.mobile482px
+                    width: 26rem
+                @include mixins.mobile425px
+                    margin-top: 2.5rem
+                    width: 22rem
+
+        &-content
+            width: 90%
+            @include mixins.flex-center
+            flex-direction: column
+            color: variables.$color-default
+
+            &-title
+                font-family: variables.$primary-font
+                font-size: 1.3rem
+                text-align: center
+                line-height: 1.5rem
+                margin-bottom: 1rem
+                font-weight: 600
+                @include mixins.mobile768px
+                    font-size: 1.5rem
+
+            &-paragraph
+                font-family: variables.$second-font
+                text-align: center
+                font-weight: 300
+                margin-bottom: 1rem
+                @include mixins.mobile768px
+                    font-size: 1rem
+
+            &-btn
+                padding: .5rem 4rem
+                border-radius: 1rem
+                border: none
+                font-family: variables.$primary-font
+                cursor: pointer
+                transition: .3s
+                @include mixins.mobile768px
+                    font-size: 1rem
+
+                &:hover
+                    background-color: hsl(300, 69%, 71%)
+                    color: variables.$color-default
+
+footer
+    width: 100%
+    height: 1.5rem
+    position: relative
+    bottom: 0
+    @include mixins.flex-center
+    @include mixins.mobile768px
+        margin-top: .8rem
+
+    .footer-social-media
+        @include mixins.flex-center
+        font-size: 2rem
+        @include mixins.mobile768px
+            font-size: 1.5rem
+        @include mixins.mobile425px
+            font-size: 1.3rem
+            margin-top: 1.5rem
+        i   
+            font-size: 2rem
+            padding: 0 1rem
+            color: variables.$color-default

@@ -1,0 +1,16 @@
+@use 'variables'
+
+@mixin flex-center
+    display: flex
+    align-items: center
+    justify-content: center
+
+@mixin mobile768px
+    @media screen and (min-width: 768px)
+        @content
+@mixin mobile482px
+    @media screen and (min-width: 482px)
+        @content
+@mixin mobile425px
+    @media screen and (min-width: 425px)
+        @content
